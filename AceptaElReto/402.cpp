@@ -8,7 +8,7 @@ int puzzle(int n)/* return ret */{
 
     int a = sqrt(n);
 
-    //{ I:  }
+    //{ I: 0 < a <= sqrt(n) } MAL
     while (n % a > 0)
     {
        a--;
@@ -16,7 +16,7 @@ int puzzle(int n)/* return ret */{
 
    return n / a;
 }
-// { Post: ret = max i : (0 < j < i < n) ^ (i * j = n) ^  : i }
+// { Post: ret = max i : (0 < j < i < sqrt(n)) ^ (i * j = n) ^ (P.t. x : 0 <= x < j : i - j < x) : i } MAL
 
 int main(){
     int n;
